@@ -6,4 +6,6 @@ helm repo update
 
 ## Install
 helm install loki grafana/loki -n monitoring -f ./loki/values.yaml
+helm install promtail grafana/promtail -n monitoring -f ./promtail/values.yaml
+
 ````
