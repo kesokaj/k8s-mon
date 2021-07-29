@@ -1,6 +1,6 @@
 alertmanager:
   enabled: true
-  nameOverride: alertmanager
+  fullnameOverride: alertmanager
   strategy:
     type: Recreate
   persistentVolume:
@@ -14,7 +14,7 @@ alertmanager:
 
 server:
   enabled: true
-  nameOverride: prometheus
+  fullnameOverride: prometheus
   strategy:
     type: Recreate
   retention: 14d
@@ -42,7 +42,7 @@ server:
 
 pushgateway:
   enabled: true
-  nameOverride: pushgateway
+  fullnameOverride: pushgateway
   strategy:
     type: Recreate
   persistentVolume:
@@ -53,3 +53,13 @@ pushgateway:
     requests:
       cpu: 10m
       memory: 32Mi
+
+nodeExporter:
+  enabled: true
+  fullnameOverride: node-exporter
+  updateStrategy:
+    type: OnDelete
+  resources:
+    requests:
+      cpu: 100m
+      memory: 30Mi

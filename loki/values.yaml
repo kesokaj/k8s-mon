@@ -1,6 +1,4 @@
 config:
-  server:
-    http_listen_port: 80
   chunk_store_config:
     max_look_back_period: 336h
   table_manager:
@@ -19,6 +17,7 @@ service:
   type: NodePort
   nodePort: 30998
   port: 80
+  targetPort: 3100
 
 updateStrategy:
   type: OnDelete
