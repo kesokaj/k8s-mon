@@ -3,9 +3,9 @@
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
 ## Install
-helm install prom prometheus-community/prometheus -n monitoring -f values
+helm install prom prometheus-community/prometheus -n monitoring -f values.yaml
 
 ## Upgrade
 helm repo update
-helm upgrade --install prom prometheus-community/prometheus -n monitoring -f values
+helm upgrade --install prom prometheus-community/prometheus -n monitoring -f values.yaml
 ````
