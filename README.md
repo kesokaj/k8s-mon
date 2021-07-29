@@ -10,6 +10,6 @@ kubectl create ns monitoring
 ## Install
 helm install loki grafana/loki -n monitoring -f ./loki/values.yaml
 helm install promtail grafana/promtail -n monitoring -f ./promtail/values.yaml
-helm install prom prometheus-community/prometheus -n monitoring -f ./prometheus/values
+helm install prom prometheus-community/prometheus -n monitoring -f ./prometheus/values.yaml
 
 ````
