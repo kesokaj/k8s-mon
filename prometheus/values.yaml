@@ -63,3 +63,7 @@ nodeExporter:
     requests:
       cpu: 100m
       memory: 30Mi
+
+kubeStateMetrics:
+  enabled: true
+  fullnameOverride: kube-state-metrics
