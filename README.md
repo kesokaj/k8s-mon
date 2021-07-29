@@ -5,6 +5,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo update
 
 ## Create namespace
+kubectl create ns monitoring
 
 ## Install
 helm install loki grafana/loki -n monitoring -f ./loki/values.yaml
