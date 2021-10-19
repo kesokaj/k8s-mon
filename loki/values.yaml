@@ -10,12 +10,11 @@ config:
 
 persistence:
   enabled: true
-  size: 1Gi
-  storageClassName: longhorn
+  size: 64Gi
+  storageClassName: default
 
 service:
-  type: NodePort
-  nodePort: 30998
+  type: ClusterIP
   port: 80
   targetPort: 3100
 

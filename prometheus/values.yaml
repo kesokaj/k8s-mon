@@ -6,7 +6,7 @@ alertmanager:
   persistentVolume:
     enabled: true
     size: 1Gi
-    storageClass: longhorn
+    storageClass: default
   resources:
     requests:
       cpu: 10m
@@ -17,7 +17,7 @@ server:
   fullnameOverride: prometheus
   strategy:
     type: Recreate
-  retention: 14d
+  retention: 30d
   extraFlags:
     - web.enable-lifecycle
     - web.enable-admin-api
@@ -25,20 +25,19 @@ server:
     - storage.tsdb.wal-compression
     - storage.tsdb.retention.size=60GB
   global:
-    scrape_interval: 1m
+    scrape_interval: 30m
     scrape_timeout: 10s
     evaluation_interval: 1m
   persistentVolume:
     enabled: true
     size: 64Gi
-    storageClass: longhorn
+    storageClass: default
   resources:
     requests:
       cpu: 500m
       memory: 512Mi
   service:
-    type: NodePort
-    nodePort: 30999
+    type: ClusterIP
 
 pushgateway:
   enabled: true
@@ -48,7 +47,7 @@ pushgateway:
   persistentVolume:
     enabled: true
     size: 1Gi
-    storageClass: longhorn
+    storageClass: default
   resources:
     requests:
       cpu: 10m
