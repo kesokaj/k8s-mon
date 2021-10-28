@@ -1,4 +1,12 @@
-# Prerequisite
+# Description
+````
+Prometheus for kubernetes metrics.
+Loki for log-collection.
+Promtail for pushing logs to Loki.
+Grafana to visualize logs and metrics.
+````
+
+## Prerequisite
 ````
 * A real terminal, MAC or Linux. It works on Windows aswell.
 * Helm
