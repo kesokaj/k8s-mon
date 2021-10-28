@@ -7,5 +7,5 @@ helm install loki grafana/loki -n monitoring -f values.yaml
 
 ## Upgrade
 helm repo update
-helm upgrade --install loki grafana/loki -f values.yaml
+helm upgrade --install loki grafana/loki -n monitoring -f values.yaml
 ````
