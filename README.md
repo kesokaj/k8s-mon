@@ -13,4 +13,7 @@ helm install promtail grafana/promtail -n monitoring -f ./promtail/values.yaml
 helm install prometheus prometheus-community/prometheus -n monitoring -f ./prometheus/values.yaml
 helm install grafana grafana/grafana -n monitoring -f ./grafana/values.yaml
 
+## Setup ingress (edit host in file to match your own)
+kubectl apply -f ingress.yaml (or ingressroute.yaml for traefik)
+
 ````
