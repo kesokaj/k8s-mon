@@ -7,5 +7,5 @@ helm install promtail grafana/promtail -n monitoring -f values.yaml
 
 ## Upgrade
 helm repo update
-helm upgrade --install promtail grafana/promtail -f values.yaml
+helm upgrade --install promtail grafana/promtail -n monitoring -f values.yaml
 ````
