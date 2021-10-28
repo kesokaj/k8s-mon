@@ -14,6 +14,7 @@ sudo apt-get update
 sudo apt-get install helm
 ````
 
+## Start the installation
 ````
 ## Setup repo
 helm repo add grafana https://grafana.github.io/helm-charts
