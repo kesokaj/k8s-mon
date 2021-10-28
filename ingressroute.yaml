@@ -1,0 +1,17 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-dashboard
+  namespace: monitoring
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`grafana.<your domain>.<your tld>`)
+    kind: Rule
+    services:
+    - name: grafana
+      port: 80
+  tls:
+    certResolver: default
