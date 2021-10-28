@@ -11,5 +11,6 @@ kubectl create ns monitoring
 helm install loki grafana/loki -n monitoring -f ./loki/values.yaml
 helm install promtail grafana/promtail -n monitoring -f ./promtail/values.yaml
 helm install prometheus prometheus-community/prometheus -n monitoring -f ./prometheus/values.yaml
+helm upgrade --install grafana grafana/grafana -n monitoring -f ./grafana/values.yaml
 
 ````
