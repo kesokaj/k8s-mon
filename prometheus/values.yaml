@@ -6,7 +6,7 @@ alertmanager:
   persistentVolume:
     enabled: true
     size: 1Gi
-    storageClass: default
+    storageClass: longhorn
   resources:
     requests:
       cpu: 10m
@@ -25,17 +25,17 @@ server:
     - storage.tsdb.wal-compression
     - storage.tsdb.retention.size=60GB
   global:
-    scrape_interval: 30m
-    scrape_timeout: 10s
+    scrape_interval: 10s
+    scrape_timeout: 30s
     evaluation_interval: 1m
   persistentVolume:
     enabled: true
     size: 64Gi
-    storageClass: default
+    storageClass: longhorn
   resources:
     requests:
-      cpu: 500m
-      memory: 512Mi
+      cpu: 100m
+      memory: 128Mi
   service:
     type: ClusterIP
 
@@ -47,7 +47,7 @@ pushgateway:
   persistentVolume:
     enabled: true
     size: 1Gi
-    storageClass: default
+    storageClass: longhorn
   resources:
     requests:
       cpu: 10m
