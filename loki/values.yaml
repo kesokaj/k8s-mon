@@ -11,7 +11,7 @@ config:
 persistence:
   enabled: true
   size: 64Gi
-  storageClassName: default
+  storageClassName: longhorn
 
 service:
   type: ClusterIP
